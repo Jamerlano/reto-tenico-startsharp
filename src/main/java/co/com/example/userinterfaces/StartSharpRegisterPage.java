@@ -19,8 +19,11 @@ public class StartSharpRegisterPage extends PageObject {
     public static final Target CONFIRM_PASS_TEXTBOX = Target.the("Confirmar contraseña"). // Input confirm password
             locatedBy("//input[@id='SignUpPanel0_ConfirmPassword']");
     public static final Target REGISTER_BUTTON = Target.the("Boton registrarse"). // // Button regoster
-            locatedBy("#SignUpPanel0_SubmitButton");
+            locatedBy("/html[1]/body[1]/div[1]/div[1]/div[1]/form[1]/div[2]/button[1]");
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/form[1]/div[2]/button[1]") // Subtitulo de la búsqueda
+    public WebElementFacade buttonRegister;
     @FindBy(xpath = "//div[@class='toast-message']") // Texto modal
     public WebElementFacade modal;
 
+    ////button[contains(text(),"Regístrate")]
 }

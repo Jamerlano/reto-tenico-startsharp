@@ -10,7 +10,10 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Open;
 import net.thucydides.core.annotations.Managed;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -22,6 +25,7 @@ public class ExampleStepDefinitions {
     WebDriver driver;
     private Actor toby = Actor.named("Toby");
     StartSharpRegisterPage startSharpRegisterPage;
+    StartSharpInteractions startSharpInteractions;
     final String mensajeError = "------- No coincide el texto del Titulo ------";
     @Given("I have several record fields")
     public void iHaveSeveralRecordFields() {
@@ -34,7 +38,8 @@ public class ExampleStepDefinitions {
     }
     @Then("I will be able to register and validate the mandatory nature of the fields")
     public void iWillBeAbleToRegisterAndValidateTheMandatoryNatureOfTheFields() {
-        String title = "Por favor, valide los campos vacíos o inválidos (marcados en rojo) antes de enviar el formulario";
+        String title = "Please validate empty or invalid inputs (marked with red) before submitting the form.";
+        startSharpInteractions.scrollToElement(startSharpRegisterPage.buttonRegister);
         assertThat(mensajeError, StartSharpInteractions.getTitleModal(), is(equalTo(title)));
     }
 }

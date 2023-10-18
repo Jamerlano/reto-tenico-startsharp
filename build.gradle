@@ -57,6 +57,7 @@ dependencies {
     implementation "ch.qos.logback:logback-classic:${logbackVersion}"
     compileOnly 'org.projectlombok:lombok:1.18.8'
     annotationProcessor 'org.projectlombok:lombok:1.18.8'
+    testImplementation("io.github.bonigarcia:webdrivermanager:5.5.3")
 
 
 
