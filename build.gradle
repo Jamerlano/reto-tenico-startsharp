@@ -55,8 +55,8 @@ dependencies {
     implementation "net.serenity-bdd:serenity-screenplay-rest:${serenityCoreVersion}"
 
     implementation "ch.qos.logback:logback-classic:${logbackVersion}"
-    compileOnly 'org.projectlombok:lombok:1.18.8'
-    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
     testImplementation("io.github.bonigarcia:webdrivermanager:5.5.3")
 
 
